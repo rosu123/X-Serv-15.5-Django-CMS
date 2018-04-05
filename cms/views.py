@@ -22,3 +22,6 @@ def mostrar_Info(request):
         respuesta += '<li><a href="' + str(pag.id) + '">' + pag.name + '</a>'
     respuesta += "</ol>"
     return HttpResponse(respuesta)
+
+def msg_error(request, msg):
+    return HttpResponse(msg + ": content not found", status=404)
